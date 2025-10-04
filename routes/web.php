@@ -8,6 +8,5 @@ Route::get('/', function () {
 });
 
 Route::prefix('cms')->name('cms.')->group(function () {
-    Route::get('/categories',[CategoryController::class, 'index'])->name('categories.index');
-    Route::post('/categories',[CategoryController::class,'store'])->name('categories.store');
+    Route::resource('categories', CategoryController::class);
 });
